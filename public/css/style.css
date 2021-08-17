@@ -49,6 +49,7 @@ nav{
     background-color: #FFF;
     border-bottom: 1px solid #DBDBDB;
     padding: 4px 0;
+    z-index: 40;
 }
 
 .logo{
@@ -114,6 +115,7 @@ nav ul{
 }
 
 .profile{
+    position: relative;
     width: 100%;
     height: 41%;
 }
@@ -126,16 +128,28 @@ nav ul{
 }
 
 .user-profile{
-    width: 20%;
+    min-width: max-content;
     height: 100%;
     /* background-color: rgba(139, 69, 19, 0.5); */
     text-align: left;
-    padding: 10px 0 0 10px;
+    padding: 10px 0 0 5px;
 }
 
 .user-profile img{
-    width: 90px;
+    width: 154px;
+    padding-bottom: 10px;
     margin-bottom: 10px;
+}
+
+.user-name-res{
+    display: none;
+}
+
+.user-name{
+    position: relative;
+    min-width: max-content;
+    top: -40px;
+    left: 175px;
 }
 
 .user-profile h4,
@@ -145,10 +159,21 @@ nav ul{
     text-align: left;
 }
 
+.user-name h4{
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+.user-name p{
+    font-size: 0.95rem;
+}
+
 .user-config{
-    min-width: 80%;
+    max-width: 90%;
     height: 100%;
-    margin: 10px 0 10px 45px
+    margin: 10px 0 10px 45px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .user-config-name{
@@ -164,16 +189,20 @@ nav ul{
 }
 
 .config-edit{
-    width: 145px;
+    width: 123px;
     height: max-content;
     border: 1px solid #DBDBDB;
     border-radius: 4px;
     text-align: center;
-    margin: 20px 0;
+    margin: 20px 15px;
     padding: 6px 0;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 0.80rem;
+}
+
+.config-edit-res{
+    display: none;
 }
 
 
@@ -184,7 +213,7 @@ nav ul{
     flex-direction: column;
     justify-content: center;
     align-items: left;
-    margin-top: 10px;
+    margin: -20px 0 40px 0;
 }
 
 .states img{
@@ -194,42 +223,156 @@ nav ul{
 }
 
 .numbers{
-    display: none;
-    width: 100%;
-    height: 40px;
-    background-color: purple;
+    position: relative;
+    width: min-content;
+    top: -65px;
+    left: 160px;
+    margin: 0;
+    font-size: 0.84rem;
+    /* text-align: center; */
 }
 
+.numbers ul{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
 
+.numbers ul li{
+    display: flex;
+    margin: 0 15px;    
+}
+
+.numbers ul li span{
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.numbers ul li p{
+    margin: 0 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.numbers-responsive{
+    display: none;
+}
 
 .follow:hover{
     cursor: pointer;
 }
 
 .sections{
-    height: 40px;
+    height: max-content;
     width: 100%;
-    margin-top: 8px;
+    padding: 7px 0 4px 0;
+    margin-bottom: 5px;
+    border-top: 1px solid #d6d6d6;
+}
+
+.sections ul li:nth-child(2){
+    display: none;
 }
 
 .sections ul{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
 }
 
 .sections ul li{
     cursor: pointer;
+    display: flex;
+    margin: 0 40px;
+    align-items: center;
 }
 
 .sections img{
-    width: 26px;
+    width: 18px;
+}
+
+.sections ul li p{
+    margin-left: 6px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75rem;
+}
+
+.grey{
+    color: #999999;
+}
+
+.pictures{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    justify-content: center;
+}
+
+.pictures img{
+    width: 30%;
+    height: 100%;
+    margin: 10px;
+}
+
+.footer{
+    max-width: 80vh;
+    margin: 0 auto;
+    color: #919191;
+}
+
+.footer ul{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.footer ul li{
+    margin: 0 10px;
+}
+
+.footer ul li img{
+    width: 8px;
+}
+
+.footer ul li:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.footer ul li img:hover{
+    cursor: pointer;
 }
 
 
-
-@media screen and (max-width: 998px){
+@media screen and (max-width: 1226px){
     
+    body{
+        width: 100%;
+    }
+
+    section{
+        width: 80%;
+    }
+
+    .sections img{
+        width: 28px;
+    }
+
+    .section-name{
+        display: none;
+    }
+    .pictures img{
+        width: 32%;
+        height: 100%;
+        margin: 2px;
+    }
     
 }
 
@@ -256,7 +399,7 @@ nav ul{
     }
 
     .user{
-        flex-basis: 100%;
+        flex-basis: 80%;
         height: 40%;
         /* background-color: rgba(255, 99, 71, 0.479); */
         display: flex;
@@ -282,8 +425,19 @@ nav ul{
         text-align: left;
     }
 
+    .user-name{
+        display: none;
+    }
+
+    .user-name-res{
+        position: relative;
+        display: block;
+        margin-bottom: 40px;
+    }
+
     .user-config{
-        min-width: 80%;
+        display: block;
+        width: auto;
         height: 100%;
         margin: 10px 0;
     }
@@ -301,7 +455,12 @@ nav ul{
     }
 
     .config-edit{
-        width: auto;
+        display: none;
+    }
+
+    .config-edit-res{
+        display: block;
+        width: 80%;
         height: max-content;
         border: 1px solid #DBDBDB;
         border-radius: 4px;
@@ -374,6 +533,14 @@ nav ul{
         margin-top: 8px;
     }
 
+    .sections ul li:nth-child(1){
+        display: none;
+    }
+
+    .sections ul li:nth-child(2){
+        display: block;
+    }
+
     .sections ul{
         display: flex;
         flex-direction: row;
@@ -387,7 +554,6 @@ nav ul{
     .sections img{
         width: 26px;
     }
-
 
     .pictures{
         width: 100%;
@@ -405,27 +571,6 @@ nav ul{
         margin: 1px;
     }
 
-    .footer{
-        max-width: 80vh;
-        margin: 0 auto;
-        color: #919191;
-    }
-    
-    .footer ul{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        margin: 10px 0;
-    }
-    
-    .footer ul li{
-        margin: 0 10px;
-    }
-    
-    .footer ul li img{
-        width: 8px;
-    }
 
 }
 
